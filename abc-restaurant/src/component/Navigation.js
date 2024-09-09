@@ -10,7 +10,7 @@ function Navigation() {
               id="content"
               className="col-6 d-flex justify-content-center align-items-center"
             >
-              <img src="assets/Loogo1.png" alt="Loogo" className="w-50 col-6" />
+              <img src="assets/Logoo.png" alt="Loogo" className="w-50 col-6" />
             </div>
           </a>
           <div class="" id="navbarNav">
