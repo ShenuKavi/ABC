@@ -9,8 +9,9 @@ function Home() {
         <div className="h-75 d-flex flex-column justify-content-center text-start ps-5">
           <div className="fs-1 fw-bold">Welcome To ABC!</div>
           <div className="text-start fs-4 mt-3">
-            Delightful attractive or pleasing in an endering way, often with
-            unique decor or ambiance.
+          Experience delightful dining with exceptional flavors and warm hospitality
+          that make your every visit unforgettable...<br></br>
+          Come savor the unique taste of ABC!
           </div>
         </div>
         <div className="d-flex justify-content-center ps-5">

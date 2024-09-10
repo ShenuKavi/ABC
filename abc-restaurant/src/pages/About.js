@@ -22,10 +22,10 @@ function About() {
         </div>
         <div className="d-flex">
           <div className="d-flex flex-column align-items-end">
-            <img src="assets/Aboutus2.jpg" alt="about-image-1" className="w-75" />
+            <img src="assets/ABout.jpg" alt="about-image-1" className="w-80" />
           </div>
           <div className="d-flex flex-column align-items-start justify-content-end">
-            <img src="assets/Aboutus2.jpg" alt="about-image-2" className="w-75" />
+            <img src="assets/AB.jpg" alt="about-image-2" className="w-80" />
           </div>
         </div>
       </div>
