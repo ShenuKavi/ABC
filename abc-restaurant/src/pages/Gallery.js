@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../component/Navigation";
+
 
 function Gallery() {
   return (
@@ -13,7 +13,7 @@ function Gallery() {
           <img
             src="assets/Aboutus.jpg"
             alt="gallery 1"
-            className="object-fit-cover w-90 h-90"
+            className="object-fit-cover w-75 h-100"
           />
         </div>
 
@@ -23,3 +23,4 @@ function Gallery() {
   );
 }
 export default Gallery;
+

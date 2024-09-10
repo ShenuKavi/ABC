@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../component/Navigation";
+
 
 function Service() {
   return (
@@ -45,8 +45,8 @@ function Service() {
               <div className="fs-4">Food Delivery and Takeaway Orders</div>
               <div className="fw-lighter">
               A service where customers can place online orders for delivery or pickup, 
-              with an easy-to-use interface for browsing menus, customizing dishes, 
-              and selecting delivery/pickup times.
+              with an easy-to-use interface for browsing menus, 
+              customizing dishes, and selecting delivery/pickup times.
               </div>
             </div>
           </div>
@@ -63,8 +63,9 @@ function Service() {
             <div>
               <div className="fs-4">Promotions and Offers</div>
               <div className="fw-lighter">
-              Unlock exclusive deals, discounts, and seasonal offers at ABC Restaurant. 
-              Stay updated on our latest promotions and enjoy rewards through our loyalty programs—available only on our website.
+              Unlock exclusive deals, discounts, and seasonal offers at ABC Restaurant.
+              Stay updated on our latest promotions 
+              and enjoy rewards through our loyalty programs—available only on our website.
               </div>
             </div>
           </div>
@@ -76,7 +77,7 @@ function Service() {
             <div className="mb-4">
               <img
                 src="assets/hospitality.jpg"
-                alt="hospitality"
+                alt="hospitality services"
                 className="w-25"
               />
             </div>
@@ -102,9 +103,8 @@ function Service() {
             <div>
               <div className="fs-4">Customer Support and Queries</div>
               <div className="fw-lighter">
-              Have questions or feedback? 
-              Reach out to ABC Restaurant through our live chat or 
-              contact form for quick assistance and support.
+              Have questions or feedback? Reach out to ABC Restaurant through our live chat or 
+              contact form for quick assistance and support
               </div>
             </div>
           </div>

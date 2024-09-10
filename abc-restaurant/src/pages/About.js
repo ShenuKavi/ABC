@@ -1,9 +1,9 @@
 import React from "react";
-import Navigation from "../component/Navigation";
+
 
 function About() {
   return (
-    <div id="about" className="py-5 w-100">
+    <div id="about" className="pt-3 pb-5 w-100">
       <div className="fs-1 fw-bold pb-3">
         <h1>About Us</h1>
       </div>
@@ -21,9 +21,11 @@ function About() {
           </div>
         </div>
         <div className="d-flex">
-          
+          <div className="d-flex flex-column align-items-end">
+            <img src="assets/Aboutus2.jpg" alt="about-image-1" className="w-75" />
+          </div>
           <div className="d-flex flex-column align-items-start justify-content-end">
-            <img src="assets/Aboutus2.jpg" className="w-85" />
+            <img src="assets/Aboutus2.jpg" alt="about-image-2" className="w-75" />
           </div>
         </div>
       </div>
