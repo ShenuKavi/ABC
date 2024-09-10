@@ -190,41 +190,46 @@ function OnlineOrder() {
       </div>
 
       {/* Display added items and total price */}
-      {/* Order Summary */}
-      <div className="w-100 mb-20">
-        <h2 className="pt-3">Order Summary</h2>
-        <div className="w-40 mx-auto mt-4 rounded">
-          {order.length === 0 ? (
-            <p className="pt-3 text-light border-top">No items in the order.</p>
-          ) : (
-            order.map((item) => (
-              <div
-                key={item.id}
-                className="order-item d-flex justify-content-between align-items-center p-3 border-top"
-              >
-                <span>
-                  {item.item_name} - Rs. {item.price} x {item.quantity}
-                </span>
-                <button
-                  onClick={() => removeItemFromOrder(item.id)}
-                  className="btn btn-danger btn-sm"
-                >
-                  Remove
-                </button>
-              </div>
-            ))
-          )}
-          <div className="p-3 border-top border-bottom d-flex justify-content-between">
-            <span className="fw-bold">Total Price:</span>
-            <span className="fw-bold">Rs. {totalPrice}</span>
-          </div>
-        </div>
-        <div className="w-20 my-4 my-96 d-flex justify-content-center ">
-          <button onClick={handleOnlineOrder} className="w-40 btn btn-light mb-40" disabled={order.length === 0}>
-            Place Order
+     {/* Order Summary */}
+<div className="w-100 mb-4">
+  <h2 className="pt-3">Order Summary</h2>
+  <div className="w-50 mx-auto mt-4 rounded">
+    {order.length === 0 ? (
+      <p className="pt-3 text-light border-top">No items in the order.</p>
+    ) : (
+      order.map((item) => (
+        <div
+          key={item.id}
+          className="order-item d-flex justify-content-between align-items-center p-3 border-top"
+        >
+          <span>
+            {item.item_name} - Rs. {item.price} x {item.quantity}
+          </span>
+          <button
+            onClick={() => removeItemFromOrder(item.id)}
+            className="btn btn-danger btn-sm"
+          >
+            Remove
           </button>
         </div>
-      </div>
+      ))
+    )}
+    <div className="p-3 border-top border-bottom d-flex justify-content-between">
+      <span className="fw-bold">Total Price:</span>
+      <span className="fw-bold">Rs. {totalPrice}</span>
+    </div>
+  </div>
+  <div className="d-flex justify-content-center my-4">
+    <button
+      onClick={handleOnlineOrder}
+      className="btn btn-light"
+      disabled={order.length === 0}
+    >
+      Place Order
+    </button>
+  </div>
+</div>
+
     </div>
   );
 }
