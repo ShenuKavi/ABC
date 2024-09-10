@@ -12,6 +12,7 @@ import Admin from "./pages/admin/Admin";
 import UpdateUser from "./pages/admin/UpdateUser";
 import MenuItem from "./pages/admin/MenuItem";
 import Staff from "./pages/staff/staff";
+import Reservation from "./pages/Reservation";
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/admin/add-item" element={<MenuItem />} />
           <Route path="/admin/menu-item/:id" element={<MenuItem />} />
           <Route path="/staff" element={<Staff />} />
+          <Route path="/reservation" element={<Reservation   />}/>
         </Routes>
       </div>
     </Router>
