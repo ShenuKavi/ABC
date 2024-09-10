@@ -2,9 +2,18 @@ import React from "react";
 
 function FeedBack() {
   return (
-    <div className="h-90">
-      <div className="h-90 d-flex justify-content-center align-items-center">
-        <form className="border-0 rounded-3 bg-dark bg-opacity-25 py-5 w-50 d-flex flex-column align-items-center text-white">
+    <div
+      className="h-100"
+      style={{
+        backgroundImage: `url('/assets/Feedback.jpg')`, // Replace with your image path
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+      }}
+    >
+      <div className="d-flex justify-content-center align-items-center h-100">
+        <form className="border-0 rounded-3 bg-dark bg-opacity-75 py-5 w-50 d-flex flex-column align-items-center text-white">
           <div className="mb-4">
             <h1 className="text-white">Customer Feedback</h1>
           </div>
@@ -18,7 +27,7 @@ function FeedBack() {
             <input
               type="text"
               className="form-control"
-              id="customrName"
+              id="customerName"
               placeholder="Enter your name"
               autoComplete="off"
             />
@@ -41,81 +50,80 @@ function FeedBack() {
           <div className="mb-3 w-50">
             <label
               className="form-label w-100 text-start ps-2"
-              htmlFor="customerphonenumber"
+              htmlFor="customerPhoneNumber"
             >
               Phone Number
             </label>
             <input
-              type="password"
+              type="text"
               className="form-control"
-              id="customerphonenumber"
-              placeholder=""
+              id="customerPhoneNumber"
+              placeholder="Enter your phone number"
               autoComplete="off"
             />
           </div>
           <div className="mb-3 w-50">
             <label
-              htmlFor="registerType"
+              htmlFor="branchSelect"
               className="form-label w-100 text-start ps-2"
             >
               Select Branch
             </label>
             <select
               className="form-select"
-              id="registerType"
-              aria-label="selectbranch"
+              id="branchSelect"
+              aria-label="Select Branch"
             >
               <option value="" selected>
                 Select Branch
               </option>
-              <option value="Name">Colombo</option>
-              <option value="Name">Kandy</option>
-              <option value="Name">Jaffna</option>
-              <option value="Name">Monaragala</option>
+              <option value="Colombo">Colombo</option>
+              <option value="Kandy">Kandy</option>
+              <option value="Jaffna">Jaffna</option>
+              <option value="Monaragala">Monaragala</option>
             </select>
           </div>
           <div className="mb-3 w-50">
             <label
-              htmlFor="registerType"
+              htmlFor="ratingSelect"
               className="form-label w-100 text-start ps-2"
             >
-              Rating As
+              Rating
             </label>
             <select
               className="form-select"
-              id="registerType"
-              aria-label="Register Type"
+              id="ratingSelect"
+              aria-label="Rating"
             >
               <option value="" selected>
-                Select Rating Number
+                Select Rating
               </option>
-              <option value="Number">0/5</option>
-              <option value="Number">0/1</option>
-              <option value="Number">0/2</option>
-              <option value="Number">0/3</option>
-              <option value="Number">0/4</option>
-              <option value="Number">5/5</option>
+              <option value="0">0/5</option>
+              <option value="1">1/5</option>
+              <option value="2">2/5</option>
+              <option value="3">3/5</option>
+              <option value="4">4/5</option>
+              <option value="5">5/5</option>
             </select>
           </div>
           <div className="mb-3 w-50">
             <label
               className="form-label w-100 text-start ps-2"
-              htmlFor="CustomerFeedback"
+              htmlFor="customerFeedback"
             >
               Feedback
             </label>
-            <input
-              type="tel"
+            <textarea
               className="form-control"
-              id="registerPhone"
-              placeholder="Enter Your Feedback"
+              id="customerFeedback"
+              rows="3"
+              placeholder="Enter your feedback"
               autoComplete="off"
             />
           </div>
-          <button type="submit Feedback" className="btn btn-dark w-50 mt-3">
+          <button type="submit" className="btn btn-dark w-50 mt-3">
             Submit Feedback
           </button>
-          <div className="mt-3"></div>
         </form>
       </div>
     </div>
