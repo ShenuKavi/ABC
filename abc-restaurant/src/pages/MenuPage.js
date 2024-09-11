@@ -59,7 +59,7 @@ function MenuPage() {
         <div className=" d-flex mt-4 bg-white py-3">
           <div className="w-50">
             <img
-              src="assets/frenchfrice.jpg"
+              src="assets/Menu2.jpg"
               alt="menu 1"
               className="object-fit-cover w-50"
             />
@@ -109,7 +109,7 @@ function MenuPage() {
           </div>
           <div className="w-50">
             <img
-              src="assets/Milo.jpg"
+              src="assets/Menu3.jpg"
               alt="menu 1"
               className="object-fit-cover w-50"
             />
