@@ -11,6 +11,8 @@ function FeedBack() {
     feedback: ""
   });
 
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false); // New state for success message
+
   const handleChange = (e) => {
     setFeedbackData({ ...feedbackData, [e.target.id]: e.target.value });
   };
@@ -21,9 +23,19 @@ function FeedBack() {
     axios.post("http://localhost:5000/feedback", feedbackData)
       .then((response) => {
         console.log("Feedback submitted", response.data);
+        setFeedbackSubmitted(true); // Set success state to true
+        setFeedbackData({  // Optionally clear form
+          name: "",
+          email: "",
+          phoneNumber: "",
+          branch: "",
+          rating: "",
+          feedback: ""
+        });
       })
       .catch((error) => {
         console.error("There was an error submitting the feedback!", error);
+        setFeedbackSubmitted(false); // Reset success state in case of error
       });
   };
 
@@ -61,8 +73,8 @@ function FeedBack() {
               <option value="">Select Branch</option>
               <option value="Colombo">Colombo</option>
               <option value="Kandy">Kandy</option>
-              <option value="Jaffna">Jaffna</option>
-              <option value="Monaragala">Monaragala</option>
+              <option value="Galle">Galle</option>
+              
             </select>
           </div>
           <div className="mb-3 w-50">
@@ -82,6 +94,13 @@ function FeedBack() {
             <textarea className="form-control" id="feedback" rows="3" value={feedbackData.feedback} onChange={handleChange} placeholder="Enter your feedback" />
           </div>
           <button type="submit" className="btn btn-dark w-50 mt-3">Submit Feedback</button>
+
+          {/* Success Message */}
+          {feedbackSubmitted && (
+            <div className="mt-4 alert alert-success w-50 text-center">
+              Feedback submitted successfully!
+            </div>
+          )}
         </form>
       </div>
     </div>
