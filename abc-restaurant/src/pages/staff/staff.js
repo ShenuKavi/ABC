@@ -22,13 +22,71 @@ function Staff() {
   };
 
   const getReservations = async () => {
-    const response = await axios.get("/reservations");
-    setReservations(response.data);
+    try {
+      const response = await axios.get("/reservations");
+      setReservations(response.data);
+      console.log("Reservations fetched:", response.data); // Debugging: Log reservations
+    } catch (error) {
+      console.error("Error fetching reservations:", error);
+    }
   };
 
   const getOrders = async () => {
-    const response = await axios.get("/orders");
-    setOrders(response.data);
+    try {
+      const response = await axios.get("/orders");
+      setOrders(response.data);
+      console.log("Orders fetched:", response.data); // Debugging: Log orders
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+    }
+  };
+
+  // Function to accept a reservation
+  const handleAcceptReservation = async (id) => {
+    console.log("Accept reservation clicked, ID:", id); // Debugging: Log ID
+    try {
+      const response = await axios.post(`/reservations/${id}/accept`);
+      console.log("Reservation accepted:", response.data); // Debugging: Log response
+      getReservations(); // Refresh reservations after action
+    } catch (error) {
+      console.error("Error accepting reservation:", error);
+    }
+  };
+
+  // Function to cancel a reservation
+  const handleCancelReservation = async (id) => {
+    console.log("Cancel reservation clicked, ID:", id); // Debugging: Log ID
+    try {
+      const response = await axios.post(`/reservations/${id}/cancel`);
+      console.log("Reservation canceled:", response.data); // Debugging: Log response
+      getReservations(); // Refresh reservations after action
+    } catch (error) {
+      console.error("Error canceling reservation:", error);
+    }
+  };
+
+  // Function to accept an order
+  const handleAcceptOrder = async (id) => {
+    console.log("Accept order clicked, ID:", id); // Debugging: Log ID
+    try {
+      const response = await axios.post(`/orders/${id}/accept`);
+      console.log("Order accepted:", response.data); // Debugging: Log response
+      getOrders(); // Refresh orders after action
+    } catch (error) {
+      console.error("Error accepting order:", error);
+    }
+  };
+
+  // Function to cancel an order
+  const handleCancelOrder = async (id) => {
+    console.log("Cancel order clicked, ID:", id); // Debugging: Log ID
+    try {
+      const response = await axios.post(`/orders/${id}/cancel`);
+      console.log("Order canceled:", response.data); // Debugging: Log response
+      getOrders(); // Refresh orders after action
+    } catch (error) {
+      console.error("Error canceling order:", error);
+    }
   };
 
   return (
@@ -82,8 +140,12 @@ function Staff() {
                     <td>{reservation.time}</td>
                     <td>{reservation.pax}</td>
                     <td>
-                      <button className="me-2 btn btn-success">Accept</button>
-                      <button className="btn btn-danger">Cancel</button>
+                      <button className="me-2 btn btn-success" onClick={() => handleAcceptReservation(reservation.id)}>
+                        Accept
+                      </button>
+                      <button className="btn btn-danger" onClick={() => handleCancelReservation(reservation.id)}>
+                        Cancel
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -116,8 +178,12 @@ function Staff() {
                     <td>{order.menu_items.length}</td>
                     <td>Rs. {order.total}</td>
                     <td>
-                      <button className="me-2 btn btn-success">Accept</button>
-                      <button className="btn btn-danger">Cancel</button>
+                      <button className="me-2 btn btn-success" onClick={() => handleAcceptOrder(order.id)}>
+                        Accept
+                      </button>
+                      <button className="btn btn-danger" onClick={() => handleCancelOrder(order.id)}>
+                        Cancel
+                      </button>
                     </td>
                   </tr>
                 ))}
